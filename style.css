@@ -1,0 +1,229 @@
+/* =================================================
+   Variables y configuración base
+   ================================================= */
+:root {
+  --primary: #1e1e1e;
+  --accent: #ffa500;
+  --text: #333;
+  --bg: #fff;
+}
+
+/* Reset e imágenes responsivas */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Rubik', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ==============================
+   Encabezado y Navegación
+   ============================== */
+header {
+  background: var(--accent);
+  padding: 1rem;
+  color: white;
+}
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+nav a {
+  margin-left: 1rem;
+  color: white;
+  transition-property: color;
+  transition-duration: 0.3s;
+}
+nav a:hover,
+nav a:focus {
+  color: var(--accent);
+}
+
+/* ==============================
+   Hero Section
+   ============================== */
+.hero {
+  background: url('https://source.unsplash.com/1600x900/?urban,delivery')
+    center/cover no-repeat;
+  text-align: center;
+  padding: 5rem 1rem;
+  color: white;
+}
+.hero h1 span {
+  color: var(--accent);
+}
+
+/* ==============================
+   Botón principal
+   ============================== */
+.btn {
+  background: var(--accent);
+  color: #000;              /* texto negro para contraste WCAG */
+  padding: 0.75rem 1.5rem;
+  display: inline-block;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+.btn:hover {
+  background-color: #e59400;
+}
+
+/* ==============================
+   Animaciones con keyframes
+   ============================== */
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-100px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes bounce {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-10px); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.anim1 { animation: slideIn 2s ease-out forwards; }
+.anim2 { animation: bounce 1s ease-out infinite alternate; }
+.anim4 { animation: fadeIn 1.5s ease forwards; }
+
+/* ==============================
+   Galería de Servicios
+   ============================== */
+.servicios {
+  padding: 2rem 1rem;
+}
+.galeria {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+.card {
+  width: 90%;
+  max-width: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  transition: transform 0.5s ease;
+}
+.card:hover {
+  transform: scale(1.1) rotate(2deg);
+}
+.anim3 {
+  transform: rotateY(0deg);
+  transition: transform 0.8s;
+}
+.anim3:hover {
+  transform: rotateY(20deg) scale(1.05);
+}
+
+/* ==============================
+   Promociones (Grid Layout)
+   ============================== */
+.promos {
+  padding: 2rem 1rem;
+}
+.promo-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+.promo-item {
+  background: #f3f3f3;
+  padding: 1rem;
+  border-left: 4px solid var(--accent);
+  transition: background-color 0.4s ease;
+}
+.promo-item:hover {
+  background-color: #ffe4b3;
+}
+
+/* ==============================
+   Sección de Contacto
+   ============================== */
+.contacto {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+.contacto i {
+  margin-right: 0.5rem;
+  color: var(--accent);
+}
+.redes {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.redes a {
+  font-size: 1.5rem;
+  color: var(--primary);
+  transition: transform 0.3s ease;
+}
+.redes a:hover {
+  transform: scale(1.3);
+}
+
+/* ==============================
+   Footer
+   ============================== */
+footer {
+  background: #ffc011;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/* ==============================
+   Media Queries (Responsive)
+   ============================== */
+@media (min-width: 576px) {
+  .galeria {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+@media (min-width: 768px) {
+  .promo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .promo-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.imagen3 {
+  width: 300px;
+  height: 173px;
+}
+
+.imagen1-mejorada {
+  width: 300px;
+  height: 173px;
+}
+
+.imagen2 {
+  width: 300px;
+  height: 173px;
+}
